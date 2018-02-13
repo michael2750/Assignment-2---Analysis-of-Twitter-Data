@@ -1,6 +1,7 @@
 # db_assignment_2
 
 To run this project you need to install a few things.
+**--Setup the docker container--**
 
 Firstly you need to have docker installed.
 
@@ -20,6 +21,9 @@ Then unconpress the zip file: unzip trainingandtestdata.zip
 
 Then add keys to the csv file: sed -i '1s;^;polarity,id,date,query,user,text\n;' training.1600000.processed.noemoticon.csv
 
+Then to add the documents write: mongoimport --drop --db social_net --collection tweets --type csv --headerline --file  training.1600000.processed.noemoticon.csv
+
+**--Install python and pymongo--**
 You also need to have python and pymongo installed, this can easily be installed with pip.
 
 Install pip:
@@ -30,7 +34,7 @@ python -m pip install pymongo
 
 After this, you can download the repo and run the python file.
 
-Results:
+**Results:**
 
 I had 1287 errors, when loading the csv into mongodb. So that may change our results. 
 
