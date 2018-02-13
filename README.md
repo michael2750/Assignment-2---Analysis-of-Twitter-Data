@@ -1,40 +1,41 @@
-# db_assignment_2
+# Assignment 2 - Analysis of Twitter Data
 
 To run this project you need to install a few things.
 
-**--Setup the docker container--**
+### **--Setup the docker container--**
 
 Firstly you need to have docker installed.
 
 Then you need to create a docker container.
 
-docker run --rm -v $(pwd)/data:/data/db --publish=27017:27017 --name dbms -d mongo
+`docker run --rm -v $(pwd)/data:/data/db --publish=27017:27017 --name dbms -d mongo`
 
-This will give you a key. Use this key to run: docker exec -it 88385afa bash
+This will give you a key. Use this key to run: `docker exec -it 88385afa bash`
 
-Then update apt-get: apt-get update
+Then update apt-get: `apt-get update`
 
-Then install wget and unzip: apt-get install -y wget, unzip
+Then install wget and unzip: `apt-get install -y wget`, unzip
 
-Then download the zip file: wget http://cs.stanford.edu/people/alecmgo/trainingandtestdata.zip
+Then download the zip file: `wget http://cs.stanford.edu/people/alecmgo/trainingandtestdata.zip`
 
-Then unconpress the zip file: unzip trainingandtestdata.zip
+Then unconpress the zip file: `unzip trainingandtestdata.zip`
 
-Then add keys to the csv file: sed -i '1s;^;polarity,id,date,query,user,text\n;' training.1600000.processed.noemoticon.csv
+Then add keys to the csv file: `sed -i '1s;^;polarity,id,date,query,user,text\n;' training.1600000.processed.noemoticon.csv`
 
-Then to add the documents write: mongoimport --drop --db social_net --collection tweets --type csv --headerline --file  training.1600000.processed.noemoticon.csv
+Then to add the documents write: `mongoimport --drop --db social_net --collection tweets --type csv --headerline --file  training.1600000.processed.noemoticon.csv`
 
-**--Install python and pymongo--**
+### **--Install python and pymongo--**
 
 You also need to have python and pymongo installed, this can easily be installed with pip.
 
 Install pip:
-sudo apt-get install python-pip python-dev build-essential
+`sudo apt-get install python-pip python-dev build-essential`
 
 Install pymongo:
-python -m pip install pymongo
+`python -m pip install pymongo`
 
 After this, you can download the repo and run the python file.
+`python mongodb.py`
 
 **Results:**
 
