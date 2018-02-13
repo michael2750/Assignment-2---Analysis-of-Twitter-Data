@@ -31,6 +31,13 @@ You also need to have python and pymongo installed, this can easily be installed
 Install pip:
 `sudo apt-get install python-pip python-dev build-essential`
 
+Install python:
+`sudo apt-get update`
+`sudo apt-get -y upgrade`
+
+Confirm the installation of python:
+`python3 -V`
+
 Install pymongo:
 `python -m pip install pymongo`
 
